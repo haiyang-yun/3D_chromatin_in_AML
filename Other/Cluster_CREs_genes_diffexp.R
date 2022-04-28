@@ -2,7 +2,8 @@ library(GenomicRanges)
 library(ggplot2)
 library(dplyr) 
 
-##################### Seurat analysis on merged cpm from replicates #####################
+##################### annotate CREs to target genes and perform differential analysis #####################
+
 ## all HindIII fragment
 hf <- read.delim("Digest.mm10.rmap", sep="\t",header=FALSE)
 colnames(hf) <- c("chr","start","end","FragID")
