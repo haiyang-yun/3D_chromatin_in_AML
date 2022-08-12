@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Example usage of running this script: process_aligned_reads.sh -g [GENOTYPE] -m [OUTPUT_FOLDER] -x mm10
+# -g [GENOTYPE]: top folder named as genotype (e.g. WT, FLT3, NPM1, DM)for input sam files 
+# -m [OUTPUT_FOLDER]: sub folder (e.g. H3K4me1, ATAC-seq) where sam files are stored and serve as output folder to store filtered reads 
+
 GSE=$1
 GSM=$2
 genome=$3
