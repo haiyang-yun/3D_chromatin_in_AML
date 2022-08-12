@@ -7,7 +7,9 @@
 # All right reserved.
 # Licence: GPL (>=2)
 ######################################
-
+# Example usage of running this script: get_data.sh -g [GENOTYPE] -m [OUTPUT_FOLDER] -i [INPUT_FASTQ] -x mm10
+# -g [GENOTYPE]: top folder named as genotype (e.g. WT, FLT3, NPM1, DM)for input fastq data 
+# -m [OUTPUT_FOLDER]: sub folder (e.g. H3K4me1, ATAC-seq) where fastq data are stored and serve as output folder to store mapped reads and QC report
 ######################################
 # GLOBAL VARIABLES
 ######################################
