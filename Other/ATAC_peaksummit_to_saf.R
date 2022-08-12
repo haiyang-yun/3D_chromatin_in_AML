@@ -1,7 +1,7 @@
 ########## convert peak summit to 2kb bins in .saf ##########
 library(GenomicRanges)
 library(GenomicAlignments)
-atac.summit <- read.table("ATAC.consensus.peak.summit.bed", sep="\t",header=F)
+atac.summit <- read.table("ATAC_consensus_peak_summit.bed", sep="\t",header=F)
 colnames(atac.summit) <- c("chr", "start", "end", "id")
 
 atac_peak = GRanges(seqnames=atac.summit$chr, IRanges(atac.summit$start,atac.summit$end),id=atac.summit$id,strand = "+")
