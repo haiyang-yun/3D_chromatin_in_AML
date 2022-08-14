@@ -29,10 +29,10 @@ usage(){
     echo -e '\033[1m ChIP-seq /ATAC  pipeline\033[0m'
 	echo 
 	echo -e '\033[1mNAME\033[0m'
-	echo '     get_data_local'
+	echo '     get_data'
 	echo 
 	echo -e '\033[1mSYNOPSIS\033[0m'
-	echo '     usage: get_data_local  [-g top_folder] [-m sub_folder] [-x ref_genome] [-i original fastq] [--merged] [--paired]  [--fasta]'
+	echo '     usage: get_data  [-g top_folder] [-m sub_folder] [-x ref_genome] [-i original fastq] [--merged] [--paired]  [--fasta]'
 	echo 
     echo -e '\033[1mDESCRIPTION\033[0m'
 	echo '     This utility will process raw sequence data from ChIP-seq/ATAC experiments in fastQ format.'
@@ -67,9 +67,9 @@ usage(){
 	echo 
 	echo '             # To process local reads in fastQ or fasta formats.'
 	echo '             # The files need to be in: top_folder/sub_folder/file.fastq or top_folder/sub_folder/file.fa'
-	echo '             get_data_local  -g top_folder -m sub_folder -i original_fastq -x mm10'
-	echo '             get_data_local  -g top_folder -m sub_folder -i original_fastq   -x mm10 --paired'		
-	echo '             get_data_local --fasta -g top_folder -m sub_folder -i original_fastq  -x hg19'
+	echo '             get_data  -g top_folder -m sub_folder -i original_fastq -x mm10'
+	echo '             get_data  -g top_folder -m sub_folder -i original_fastq   -x mm10 --paired'		
+	echo '             get_data --fasta -g top_folder -m sub_folder -i original_fastq  -x hg19'
 	echo 
 	echo  -e '\033[1mAUTHOR\033[0m'
 	echo '     David Ruau <davidruau@gmail.com>'
