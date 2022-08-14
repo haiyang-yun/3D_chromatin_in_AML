@@ -1,5 +1,9 @@
 # 3D_chromatin_in_AML
-Release of custom code for paper "3D chromatin in AML" Yun et al. 2021
+Release of custom code for the manuscript "Mutational synergy during leukemia induction remodels chromatin accessibility, histone modifications and three-dimensional DNA topology to alter gene expressionL" (Yun et al. Nature Genetics 2021)
+
+The scripts are provided for the integrative analysis of chromatin accessibility (ATAC-seq), chromatin states (ChIP-seq), DNA looping (pCHiC) and transcriptome (RNA-se) across four cellular states in a murine allelic series that models gene mutational synergy in the induction of acute myeloid leukemia. 
+
+Analytical procedures using these scripts cover from raw data processing all the way through to integrated data analysis. The raw data processing includes quality control, read mapping, data filtering, normalization, and statistical calling. Subsequently, the processed data are first subjected to integrated analysis on dynamic chromatin states, to reveal differential clusters of cis-regulatory elements (CREs) that demonstrate similar dynamic chromatin modifications. Afterwards, the specific clusters of CREs with characteristic gain or loss of enhancer signatures are annotated to target genes, using either linear or spatial proximity information. Differential mRNA expression is further analysed for these genes along with their associated functional network. The relevant biological information of the data used and their functional interpretation are discussed in great detail in (Yun et al. Nature Genetics 2021).
 
 ## contents
 11 directories, 60 files
