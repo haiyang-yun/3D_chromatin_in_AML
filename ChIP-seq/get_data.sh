@@ -81,6 +81,9 @@ usage(){
 	exit 1
 }
 
+# we use Bowtie instead of Bowtie2 for data mapping to hg19, simply to keep consistency with our previous analysis. However, Bowtie2 can be used for any reference genomes.
+# new reference genomes such as hg38|mm39 can be supplemented by downloading their reference genome files to the reference folder.
+
 do_bowtie(){
 	case "$GENOME" in
 		mm10|mm9|hg19|rn4|rn5 )
