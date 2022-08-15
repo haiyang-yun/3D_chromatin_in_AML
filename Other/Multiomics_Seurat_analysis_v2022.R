@@ -44,29 +44,35 @@ rownames(atac.m.matrix) = c("WT-H3K4me1","Npm1c-H3K4me1","Flt3ITD-H3K4me1","DM-H
                             "WT-H3K4me3","Npm1c-H3K4me3","Flt3ITD-H3K4me3","DM-H3K4me3",
                             "WT-H3K27ac","Npm1c-H3K27ac","Flt3ITD-H3K27ac","DM-H3K27ac",
                             "WT-ATAC","Npm1c-ATAC","Flt3ITD-ATAC","DM-ATAC")
+# Create Seurat object and normalise the data
 atac.m.object <- CreateSeuratObject(counts = atac.m.matrix, project = "atac.m.summit", min.cells = 0, min.features = 0)
 atac.m.object <- NormalizeData(atac.m.object, normalization.method = "RC", scale.factor = 1000000)
 
+# find variable features and run PCA
 atac.m.object <- FindVariableFeatures(atac.m.object, selection.method = "vst")
 m.id <- rownames(atac.m.object)
 atac.m.matrix.scale <- ScaleData(atac.m.object, features = m.id)
 atac.m.matrix.pca <- RunPCA(atac.m.matrix.scale,features = m.id)
 
+# generate PCA plot indicating the right cutoff
 png("Multiomics_pca_cutoff.png", width = 4, height = 3.5, units = "in", res=300)
 ElbowPlot(atac.m.matrix.pca, ndims = 15)
 dev.off()
 ## suggesting a cutoff at 8 
 
+# search for neighboring data points and identify data clusters
 m.tmp <- FindNeighbors(atac.m.matrix.pca, reduction = "pca", dims = 1:8, nn.eps = 0.5)
 m.tmp <- FindClusters(m.tmp, resolution = 0.5)
 ## Number of communities: 10
 
+# perform high dimension redcution 
 m.tmp2 <- RunUMAP(m.tmp, dims = 1:10, min.dist = 0.75)
 m.tmp3 <- RunTSNE(m.tmp, dims = 1:10)
 
 p2 <- DimPlot(m.tmp2, reduction = "umap", pt.size = 0.1, label=TRUE, repel = TRUE, raster=FALSE) + ggtitle(label = "UMAP") + NoLegend()
 p3 <- DimPlot(m.tmp3, reduction = "tsne", pt.size = 0.1, label=TRUE, repel = TRUE, raster=FALSE) + ggtitle(label = "tSNE") + NoLegend()
 
+# plotting dimensional reduction plots
 png("Multiomics_umap_tene.png", width = 7, height = 4, units = "in", res=300)
 CombinePlots(plots = list(p2, p3))
 dev.off()
