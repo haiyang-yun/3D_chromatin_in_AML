@@ -9,7 +9,7 @@
 # Step  4: Sort uniquely mappable sam file and generate raw counts
 ##############################################################################
 
-# Example usage of running this script: runRNA_STAR_paired.pl [INPUT_r_1_FASTQ] [INPUT_r_2_FASTQ] [GENOTYPE] mm10 STAR-GENOMES-mm10.gencode.vM7.comprehensive gencode.vM7.comprehensive.annotation.gtf 
+# Example usage of running this script: runRNA_STAR_paired.pl [INPUT_r_1_FASTQ] [INPUT_r_2_FASTQ] [GENOTYPE] mm10 STAR-GENOMES-mm10.gencode.vM7.comprehensive gencode.vM7.comprehensive.annotation.gtf [exons y/n]
 # [INPUT_r_1_FASTQ] [INPUT_r_2_FASTQ]: input paired reads
 # [GENOTYPE]: folder named as genotype (e.g. WT, FLT3, NPM1, DM) where fastq files are stored
 # STAR-GENOMES-mm10.gencode.vM7.comprehensive: path to STAR genome folder
